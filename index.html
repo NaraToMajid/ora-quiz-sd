@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Quiz Pelajaran SD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-content">
+            <!-- Header dengan Subject Selector -->
+            <div class="header">
+                <div class="title-section">
+                    <h1>Quiz Pelajaran</h1>
+                    <div class="subtitle">Uji pengetahuanmu</div>
+                </div>
+                
+                <div class="subject-selector">
+                    <span class="subject-icon">📚</span>
+                    <select id="mapel">
+                        <option value="pai">PAI</option>
+                        <option value="bindo">B. Indo</option>
+                        <option value="matematika" selected>MTK</option>
+                        <option value="ipa">IPA</option>
+                        <option value="ips">IPS</option>
+                        <option value="pkn">PKN</option>
+                        <option value="bing">B. Ing</option>
+                        <option value="tik">TIK</option>
+                        <option value="penjas">PJOK</option>
+                        <option value="jawa">B. Jawa</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-label">SKOR</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">BENAR</div>
+                    <div class="stat-value" id="correct">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">SALAH</div>
+                    <div class="stat-value" id="wrong">0</div>
+                </div>
+            </div>
+
+            <!-- Question -->
+            <div class="question-box">
+                <div class="question-label">SOAL</div>
+                <div id="soal">
+                    <div class="loading">
+                        <div class="loading-text">Memuat...</div>
+                        <div class="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Options -->
+            <div class="options-container">
+                <div class="options-label">PILIHAN</div>
+                <div class="options-grid" id="options-grid">
+                    <!-- Opsi akan diisi oleh JavaScript -->
+                </div>
+            </div>
+
+            <!-- Result Panel -->
+            <div class="result-panel" id="result-panel">
+                <div class="result-label">HASIL</div>
+                <div class="result-title" id="result-title">⏳ Pilih Jawaban</div>
+                <div class="result-message" id="result-message">Pilih salah satu jawaban</div>
+                <div class="result-answer" id="result-correct-answer"></div>
+                
+                <!-- Progress -->
+                <div class="progress-text" id="progress-text">Soal: 0/0</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons-container">
+                <button class="btn btn-primary" id="submit-btn" disabled>
+                    <span class="btn-text">Submit</span>
+                </button>
+                <button class="btn btn-secondary" id="next-btn" disabled>
+                    <span class="btn-text">Lanjut</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
